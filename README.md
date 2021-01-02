@@ -52,12 +52,12 @@ c) fetch_summary_stats:
 - Given that a lognormal dist for num_passengers must be in the range of (0,5], shall assume that the transformed normal distribution has mean = 0, sd =1 before its truncation to (-inf, log(5)] 
 
 ## How to run:
--simulate: Whether to use simulation or custom data
--pick_up_mode: Method to calculate elevator pick-up load. 2 options: "requests", "num_passengers"
--length: Number of simulation data points to use if simulate is set to True
--verbose: Turn on extra logging
--seed: Random seed to use to ensure replicability
--lobby_prob: Probability lobby is chosen (Has to be less than 1)
--test_case: Custom test case to use if simulate is set to False
+- simulate: Whether to use simulation or custom data
+- pick_up_mode: Method to calculate elevator pick-up load. 2 options: "requests", "num_passengers"
+- length: Number of simulation data points to use if simulate is set to True
+- verbose: Turn on extra logging
+- seed: Random seed to use to ensure replicability
+- lobby_prob: Probability lobby is chosen (Has to be less than 1)
+- test_case: Custom test case to use if simulate is set to False
 
 `python3 test.py --simulate True --pick_up_mode requests --length 3 --verbose False --seed 0 --lobby_prob 0.5`
