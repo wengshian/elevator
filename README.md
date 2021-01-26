@@ -27,9 +27,9 @@ b) `update`:<br/>
 --> Handles the updating of all elevators and is called in the Simulator function<br/>
 
 3) **Simulator**: Interface to run simulations<br/>
-a) 'simulate_data':<br/>
+a) `simulate_data`:<br/>
 --> to simulate data according to given parameters<br/>
-b) 'run':<br/>
+b) `run`:<br/>
 
 --> main runner function<br/>
 + runner does these 4 things:<br/>
