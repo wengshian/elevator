@@ -31,8 +31,8 @@ a) 'simulate_data':<br/>
 --> to simulate data according to given parameters<br/>
 b) 'run':<br/>
 
---> main runner function<br/>
---> runner does these 4 things:<br/>
++ main runner function<br/>
++ runner does these 4 things:<br/>
 i) Get data<br/>
 ii) Call the Otis class<br/>
 iii) Transform the data into passenger requests which are then given to Otis for allocation to Elevators<br/>
