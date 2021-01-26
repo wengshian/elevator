@@ -28,15 +28,14 @@ b) `update`:<br/>
 
 3) **Simulator**: Interface to run simulations<br/>
 a) `simulate_data`:<br/>
---> to simulate data according to given parameters<br/>
+--> to simulate data according to given parameters<br/><br/>
 b) `run`:<br/>
-
 --> main runner function<br/>
-+ runner does these 4 things:<br/>
+--> runner does these 4 things:<br/><br/>
 i) Get data<br/>
 ii) Call the Otis class<br/>
 iii) Transform the data into passenger requests which are then given to Otis for allocation to Elevators<br/>
-iv) Continue running the simulation until all requests have been completed<br/>
+iv) Continue running the simulation until all requests have been completed<br/><br/>
 c) `fetch_summary_stats`:<br/>
 --> Aggregate stats per passenger and print out the summary table<br/>
 
