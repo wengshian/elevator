@@ -31,7 +31,7 @@ a) 'simulate_data':<br/>
 --> to simulate data according to given parameters<br/>
 b) 'run':<br/>
 
-+ main runner function<br/>
+--> main runner function<br/>
 + runner does these 4 things:<br/>
 i) Get data<br/>
 ii) Call the Otis class<br/>
