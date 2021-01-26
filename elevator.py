@@ -17,8 +17,8 @@ class Elevator:
         self.time = 0 #current time (Each unit is in seconds)
         self.num_passengers = 0 #Number of passengers
         self.verbose = verbose #Verbose mode for more exact logs
-        self.current_state = "idle" #Different states:
         self.max_passengers = max_passengers
+        self.current_state = "idle" #Different states:
         #idle: Elevator has no direction 
         #moving: Elevator is moving
         #transferring: Elevator is either dropping off or picking up passengers
@@ -66,7 +66,7 @@ class Elevator:
                     self.priority.pop(new_passenger) #Remove passenger from priority queue
             else:
                 self.pick_up[self.current].append(new_passenger) #Add it back into the pick-up queue
-                self.pick_up_floors.add(self.current) #Add it pack into pick-up floors set
+                self.pick_up_floors.add(self.current) #Add it back into pick-up floors set
                 if new_passenger not in self.priority:
                     self.priority[new_passenger] = self.time #Add it into the priority ordered set
 
@@ -165,7 +165,7 @@ class Elevator:
                   
     def update_direction(self):
         if len(self.pick_up_floors) + len(self.dest_floors) == 0:
-            self.direction = 0 #Elevator currently has no pending requests. TODO: Expand this to make elevator return to its "base"
+            self.direction = 0 #Elevator currently has no pending requests.
             self.current_state ="idle"
         elif self.current > max(self.pick_up_floors | self.dest_floors) or self.current == 100:
             self.direction = -1 #Elevator has reached max request floors or is currently at the highest floor
@@ -175,11 +175,11 @@ class Elevator:
             self.current_state = "moving"
         else:
             if self.direction == 0:
+                #Elevator was either idle or was transferring passengers
                 #This is where self.priority can influence the direction
                 if self.priority:
                     #There are passengers who haven't been able to get on the elevator due to capacity constraints
                     top = next(iter(self.priority))
-                    #print(self.id, top.to, top.depart)
                     if self.num_passengers + top.num <= self.max_passengers:
                         self.direction = -1 if top.depart < self.current else 1 #Direct elevator to passenger 
                     else:
@@ -198,7 +198,6 @@ class Elevator:
         self.all_logs["direction"].append(self.direction)
         self.all_logs["time"].append(self.time)
         print("Elevator ID: ",self.id, "Time:",  self.time, "Floor: ", self.current, "num_passengers: ", self.num_passengers, "Direction: ", self.direction, "State: ", self.current_state,"Dest: ", list(self.dest_floors), "Pick up: ", list(self.pick_up_floors))
-        
 
 class Otis:
     """

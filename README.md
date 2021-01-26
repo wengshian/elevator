@@ -28,7 +28,7 @@ b) 'update':<br/>
 
 3) **Simulator**: Interface to run simulations<br/>
 a) 'simulate_data':<br/>
---> to simulate data according to given parameters (not completed yet)<br/>
+--> to simulate data according to given parameters<br/>
 b) 'run':<br/>
 --> main runner function<br/>
 --> runner does these 4 things:<br/>
@@ -50,6 +50,7 @@ c) 'fetch_summary_stats':<br/>
 - Optimization not perfect as passenger request's destination floor is not considered when being added to an elevevator
 - Assume that to passenger, utility of waiting 1s for the elevator == utility of travelling 1s in the elevator
 - Given that a lognormal dist for num_passengers must be in the range of (0,5], shall assume that the transformed normal distribution has mean = 0, sd =1 before its truncation to (-inf, log(5)] 
+- Elevator can immediately stop or move
 
 ## How to run:
 - `simulate`: Whether to use simulation or custom data
